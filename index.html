@@ -11,18 +11,13 @@
     <h2>Date & Time</h2>
     <fieldset>
         <label for="enterTask">Enter a Task:</label>
-        <input type="text" id="enterTask" name="enterTask">
-        <input type="submit" value="Add">
+        <input type="text" id="enterTask" name="enterTask" placeholder='type task here and click "add"'>
+        <input id="addButton" type="button" value="Add">
     </fieldset>
 </header>
 <main>
     <section class="taskList">
-        <ol>
-            <li class="listItem">new task here
-                <button class="complete" type="button" onclick="alert('Good Job!')">Complete!</button>
-                <button class="delete" type="button" onclick="alert('Task Removed')">Delete</button>
-            </li>
-        </ol>
+        <ol class="taskItem"></ol>
         <button class="btn new">New day, new list</button>
     </section>
     <section class="statsList">
@@ -32,8 +27,8 @@
             Tasks!
         </p>
         <p class="messagePercent">That means you were...</p>
-        <p class="label-percent">
-            <span class="percent">10</span>
+        <p class="label-percentScore">
+            <span class="percentScore">10</span>
             % efficient today
         </p>
     </section>
