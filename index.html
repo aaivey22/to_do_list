@@ -16,14 +16,18 @@
     </fieldset>
 </header>
 <main>
-    <section class="taskList">
-        <ol class="taskItem"></ol>
-        <button class="btn new">New day, new list</button>
-    </section>
-    <section class="statsList">
+    <div class="taskList">
+        <ol>
+            <div class="container" id="taskItem"></div>
+        </ol>
+        <div>
+            <button class="btn" id="blankList">New day, new list</button>
+        </div>
+    </div>
+    <section id="statsList">
         <p class="messageScore">Today I completed...</p>
         <p class="label-score">
-            <span class="score">10</span>
+            <span class="score"></span>
             Tasks!
         </p>
         <p class="messagePercent">That means you were...</p>
@@ -32,7 +36,6 @@
             % efficient today
         </p>
     </section>
-
 </main>
 
 <body>

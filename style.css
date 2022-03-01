@@ -1,0 +1,8 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+
+#statsList {
+    margin: 5% 10% 5% 20%;
+}

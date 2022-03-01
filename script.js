@@ -14,16 +14,19 @@ document.querySelector('#addButton').addEventListener
         let taskItem = String(document.querySelector('#enterTask').value);
         allTasks.push(taskItem);
 
-        const className = "taskItem" + taskId;
-        //const taskText = allTasks;
-        const taskItemHtml = `
-            <li id="${className}">${taskItem}
-            <button class="complete" type="button">Complete</button>
-            <button class="delete" type="button" onclick = "deleteTask(${taskId}, '${taskItem}')">Delete</button>
-            </li>
-            `
+        const listIdName = 'taskItem' + taskId;
+        const buttonContainerId = 'buttonItem' + taskId;
 
-        document.querySelector('.taskItem').insertAdjacentHTML("beforeend", taskItemHtml);
+        const taskItemHtml = `
+            <div class='wrapper' id='${listIdName}'>
+                <li>${taskItem}</li>
+            </div>
+            <div class='wrapper' id='${buttonContainerId}'>
+                <button class="complete" type="button" onclick = "completeTask('${listIdName}')">Complete</button>
+                <button class="delete" type="button" onclick = "deleteTask('${listIdName}', '${taskItem}', '${buttonContainerId}')">Delete</button>
+            </div>
+            `
+        document.querySelector('#taskItem').insertAdjacentHTML("beforeend", taskItemHtml);
         numberOfTasks++;
 
         taskId++;
@@ -33,9 +36,10 @@ document.querySelector('#addButton').addEventListener
 
     });
 
-// i references the taskId to the specific list element to remove it from the "front end", NOT from the actual array
-function deleteTask(i, a) {
-    document.getElementById("taskItem" + i).remove();
+// i references the className to the specific list element to remove it from the "front end", NOT from the actual array
+function deleteTask(i, a, b) {
+    document.getElementById(i).remove();
+    document.getElementById(b).remove();
 
     console.log(allTasks, 'delete function');
     console.log(allTasks.indexOf(a), 'index of item selected to delete');
@@ -43,5 +47,10 @@ function deleteTask(i, a) {
     allTasks.splice(allTasks.indexOf(a), 1);
     numberOfTasks--;
     console.log(allTasks, 'items remaining in array');
+};
 
+function completeTask(i) {
+    //document.getElementById(i).innerHTML = "hell0";
+    document.getElementById(i).style.textDecoration = "line-through";
+    console.log(completeTask);
 };
