@@ -1,8 +1,15 @@
-.wrapper {
+.grid-container {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 5px;
 }
 
-#statsList {
-    margin: 5% 10% 5% 20%;
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
 }

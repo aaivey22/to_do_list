@@ -18,6 +18,18 @@ document.querySelector('#addButton').addEventListener
         const buttonContainerId = 'buttonItem' + taskId;
 
         const taskItemHtml = `
+        <div class='grid-container'>
+            <div class='grid-item1' id='${listIdName}'>
+                <li>${taskItem}</li>
+            </div>
+            <div class='grid-item2' id='${buttonContainerId}'>
+                <button class="complete" type="button" onclick = "completeTask('${listIdName}')">Complete</button>
+                <button class="delete" type="button" onclick = "deleteTask('${listIdName}', '${taskItem}', '${buttonContainerId}')">Delete</button>
+            </div>
+        </div>
+            `
+/*
+            const taskItemHtml = `
             <div class='wrapper' id='${listIdName}'>
                 <li>${taskItem}</li>
             </div>
@@ -26,6 +38,8 @@ document.querySelector('#addButton').addEventListener
                 <button class="delete" type="button" onclick = "deleteTask('${listIdName}', '${taskItem}', '${buttonContainerId}')">Delete</button>
             </div>
             `
+*/
+
         document.querySelector('#taskItem').insertAdjacentHTML("beforeend", taskItemHtml);
         numberOfTasks++;
 
